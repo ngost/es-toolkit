@@ -30,17 +30,17 @@ function before<F extends (...args: any[]) => any>(n: number, func: F): F;
 ## 예시
 
 ```typescript
-import { after } from 'es-toolkit/function';
+import { before } from 'es-toolkit/function';
 
 const mockFn = () => {
   console.log('실행됨');
 };
-const afterFn = after(3, mockFn);
+const beforeFn = before(3, mockFn);
 
-// 아무것도 로깅하지 않아요.
-afterFn();
-// 아무것도 로깅하지 않아요.
-afterFn();
 // '실행됨'을 로깅해요.
-afterFn();
+beforeFn();
+// '실행됨'을 로깅해요.
+beforeFn();
+// 아무것도 로깅하지 않아요.
+beforeFn();
 ```
